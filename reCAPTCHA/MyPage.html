@@ -1,0 +1,17 @@
+{{ block scripts }}
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld3CXYqAAAAAL5_L_TNmFjLP1TVzw9XDpBxFJJr"></script>
+    <script src="{% static 'reCAPTCHA.js' %}"></script>
+{{ endblock }}
+
+{{ block title }}
+    About your person
+{{ endblock }}
+
+{{ block content }}
+
+    {{ formfields }}
+
+    <br>
+	<button class="otree-btn-next btn btn-primary" onclick="onSubmitForm(event)">Next</button>
+
+{{ endblock }}
