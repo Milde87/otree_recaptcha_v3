@@ -1,5 +1,5 @@
 // Define the reCAPTCHA site key
-const SITE_KEY = '6Ld3CXYqAAAAAL5_L_TNmFjLP1TVzw9XDpBxFJJr';
+const SITE_KEY = 'MyRecaptchaSiteKey123';
 
 // Event handler for form submission
 function onSubmitForm(event) {

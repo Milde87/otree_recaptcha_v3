@@ -1,9 +1,9 @@
 import requests
 
 # Your API key, site key and project information
-PROJECT_ID = "my-project-8441-1730816628883"
-API_KEY = "AIzaSyAu10qjH2zsgswm-8_MCki6taRgm46m_n4"
-SITE_KEY = "6Ld3CXYqAAAAAL5_L_TNmFjLP1TVzw9XDpBxFJJr"
+PROJECT_ID = "my-project-1234-12345678910"
+API_KEY = "MyGoogleAPIKey123"
+SITE_KEY = "MyRecaptchaSiteKey123"
 ACTION = "FORM_SUBMISSION"
 
 def validate_recaptcha(token):

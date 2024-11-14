@@ -39,6 +39,7 @@ class Player(BasePlayer):
         blank=False,
     )
     score_recaptcha = models.FloatField()
+    valid_token = models.BooleanField()
 
 
 # PAGES
@@ -48,10 +49,17 @@ class MyPage(Page):
 
     @staticmethod
     def live_method(player, data):
+        # Check if the incoming data type is 'captcha'
         if data['type'] == 'captcha':
-            player.score_recaptcha = validate_recaptcha(data["response_token"])
-            return {player.id_in_group: True}
+            # Call the function to validate the reCAPTCHA token, passing the token from the data
+            validate = validate_recaptcha(data["response_token"])
 
+            # Store in the player's fields
+            player.score_recaptcha = validate['riskAnalysis']['score']
+            player.valid_token = validate['tokenProperties']['valid']
+
+            # Return a confirmation response to the client for this specific player
+            return {player.id_in_group: True}
 
 class redirect_bot(Page):
     template_name = '_static/redirect_bot.html'
