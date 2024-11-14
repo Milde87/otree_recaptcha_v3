@@ -57,6 +57,7 @@ Add a field to your player class:
 # __init__.py
 class Player(BasePlayer):
     score_recaptcha = models.FloatField()
+    valid_token = models.BooleanField()
 ```
 
 On the page where you want to use reCAPTCHA, add the following function to validate the received token and save the score.
@@ -66,7 +67,9 @@ class MyPage(Page):
     @staticmethod
     def live_method(player, data):
         if data['type'] == 'captcha':
-            player.score_recaptcha = validate_recaptcha(data["response_token"])
+            validate = validate_recaptcha(data["response_token"])
+            player.score_recaptcha = validate['riskAnalysis']['score']
+            player.valid_token = validate['tokenProperties']['valid']
             return {player.id_in_group: True}
 ```
 
