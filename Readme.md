@@ -77,7 +77,6 @@ On the template for the page, add the following code:
 ```html
 <!-- place in content block, where all formfields live -->
 {{ block scripts }}
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld3CXYqAAAAAL5_L_TNmFjLP1TVzw9XDpBxFJJr"></script>
     <script src="{% static 'reCAPTCHA.js' %}"></script>
 {{ endblock }}```
 
