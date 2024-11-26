@@ -26,7 +26,7 @@ def validate_recaptcha(token):
     if response.status_code == 200:
         result = response.json()
         print("reCAPTCHA-Validierung erfolgreich:", result)
-        return result['riskAnalysis']['score']
+        return result
     else:
         print(f"Fehler bei der reCAPTCHA-Validierung: {response.status_code} - {response.text}")
         return None
