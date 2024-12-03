@@ -10,11 +10,13 @@ Starting from version v3, reCAPTCHA runs in the background, so participants are 
 - Install ```requests``` in your python environment.
 
 ## Setup
+- Create a new [Google Cloud Project](https://console.cloud.google.com/projectcreate) (this will provide you with a ````PROJECT_ID````).
+- Enable the necessary [API](https://console.cloud.google.com/apis) in this project to generate the required credentials (this will provide you with an ````API_KEY````).
 - Sign up for [reCAPTCHA](https://www.google.com/recaptcha/)
-    - select v3 Admin Console with otherwise default options 
-    - make sure to add the appropriate domain, such as ```herokuapp.com```, if you intend to use it with specific hosting providers.
-    - for development, also add ```localhost```
-- Set up an API with Google Cloud
+  - Select the v3 Admin Console with default options.
+  - Add the appropriate domains, such as ```herokuapp.com```, if you're using specific hosting providers.
+  - For development purposes, also include ```localhost```.
+  - This process will provide you with a ````SITE_KEY````.
 - Copy ```reCAPTCHA.js``` and ```ReCaptchaRequest.py``` in your ```_static``` folder
 
 ## Usage
