@@ -30,4 +30,3 @@ def validate_recaptcha(token):
     else:
         print(f"Error during reCAPTCHA validation: {response.status_code} - {response.text}")
         return None
-
