@@ -1,8 +1,9 @@
 import requests
+from os import environ
 
 # Your API key, site key and project information
 PROJECT_ID = "my-project-1234-12345678910"
-API_KEY = "MyGoogleAPIKey123"
+API_KEY = environ.get('RECAPTCHA_API_KEY')
 SITE_KEY = "MyRecaptchaSiteKey123"
 ACTION = "FORM_SUBMISSION"
 
